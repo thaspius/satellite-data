@@ -15,10 +15,14 @@ FLUSH PRIVILEGES;
 5. Flyway migrations are stored in the resources/db/mysql/migration folder.
 6. Web application will run using port 8080, please make sure no other applications are running using this port. 
 7. Project was built using Java 11, ensure that the correct JRE is installed prior to running
+8. Ensure the mvn command is installed and works from the command line
 
 ### Run instructions 
 1. Satellite measurements CSV file location is configured in resource/application.properties, update it to point to the import CSV
 2. Main class to run is org.demo.satellite.SatelliteDataApplication
+3. From the command line, navigate into the project repository top level folder
+4. Run `mvn install`
+5. Once maven generates the jar, run `java -jar ./target/satellite-data-0.0.1-SNAPSHOT.jar`
 
 ### General Information
 A postman v2.1 collection was created to aid in testing the API methods. It is located in the project top level folder in file `SatelliteDemo.postman_collection.json`.
