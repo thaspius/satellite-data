@@ -15,6 +15,11 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 
+/**
+ * Database entity for managing satellite measurement records
+ * @author Jarrod Sears
+ *
+ */
 @Entity
 @Table(name = "satellite_measurements")
 public class SatelliteMeasurementModel

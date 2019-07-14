@@ -6,6 +6,11 @@ import java.util.Date;
 import org.demo.satellite.models.db.SatelliteMeasurementModel;
 import org.demo.satellite.models.db.SatelliteModel;
 
+/**
+ * Base class for satellite measurement. Assists with converting CSV data to Database model
+ * @author Jarrod Sears
+ *
+ */
 public abstract class BaseSatelliteMeasurement implements SatelliteMeasurementCsv
 {   
     protected Date timestamp;

@@ -12,6 +12,11 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 
+/**
+ * Data model entity for ingest file details
+ * @author Jarrod Sears
+ *
+ */
 @Entity
 @Table(name = "ingest_details")
 public class IngestDetailModel

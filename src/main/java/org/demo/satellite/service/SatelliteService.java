@@ -10,6 +10,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+/**
+ * Provide Services related to Satellite records
+ * 
+ * @author Jarrod Sears
+ *
+ */
 @Service
 @Transactional
 public class SatelliteService

@@ -18,6 +18,11 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+/**
+ * Application entry point. Initializes the application and starts the input file ingest process. 
+ * @author Jarrod Sears
+ *
+ */
 @SpringBootApplication
 public class SatelliteDataApplication
 {
@@ -43,6 +48,9 @@ public class SatelliteDataApplication
         logger.info("Initializing Satellite Data Application...");
     }
     
+    /**
+     * Initiates input file input ingestion, which creates the satellite measurement database records.
+     */
     @PostConstruct 
     public void importSatelliteMeasurements()
     {

@@ -15,6 +15,12 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+/**
+ * Resource routing for satellite API methods
+ * 
+ * @author Jarrod Sears
+ *
+ */
 @Path("/satellites")
 @Component
 public class SatelliteResource

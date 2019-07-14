@@ -6,6 +6,11 @@ import org.demo.satellite.models.db.SatelliteModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+/**
+ * Interface to backing Database for Satellite data
+ * @author Jarrod Sears
+ *
+ */
 @Repository
 public interface SatelliteRepository extends JpaRepository<SatelliteModel, Long>
 {
