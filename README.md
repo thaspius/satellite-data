@@ -49,7 +49,9 @@ Database credentials and the ingested satellite measurements CSV file name are r
 2. Navigate to the directory the repository is in (not in the repo itself).
 3. run the command below
 
-    docker run --rm -v `pwd`:/data jpbernius/pandoc -o satellite-data-documentation.pdf satellite-data/README.md
+```
+docker run --rm -v `pwd`:/data jpbernius/pandoc -o satellite-data-documentation.pdf satellite-data/README.md
+```
 
 The output file satellite-data-documentation.pdf will now be present in the folder you are currently in.
 
