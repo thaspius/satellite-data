@@ -8,7 +8,6 @@ public class SatelliteMeasurementTime
     
     public SatelliteMeasurementTime(String satelliteName, Long timeInMinutes)
     {
-        super();
         this.satelliteName = satelliteName;
         this.timeInMinutes = timeInMinutes;
     }

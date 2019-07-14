@@ -15,7 +15,6 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 
-
 @Entity
 @Table(name = "satellite_measurements")
 public class SatelliteMeasurementModel
@@ -45,13 +44,13 @@ public class SatelliteMeasurementModel
     private Integer ndviIndex;
     
     @NotNull
-    @Column(name = "radiation_index", columnDefinition="Decimal(4,1)" )
+    @Column(name = "radiation_index", columnDefinition = "Decimal(4,1)")
     private BigDecimal radiationIndex;
     
-    @Column(name = "sea_salinity", columnDefinition="Decimal(3,1)" )
+    @Column(name = "sea_salinity", columnDefinition = "Decimal(3,1)")
     private BigDecimal seaSalinity;
     
-    @Column(name = "earth_altitude", columnDefinition="Decimal(5,1)" )
+    @Column(name = "earth_altitude", columnDefinition = "Decimal(5,1)")
     private BigDecimal earthAltitude;
     
     @Column(name = "vegetation_classification")
@@ -60,6 +59,10 @@ public class SatelliteMeasurementModel
     @ManyToOne
     @JoinColumn(name = "satellite_id")
     private SatelliteModel satellite;
+    
+    @ManyToOne
+    @JoinColumn(name = "ingest_detail_id")
+    private IngestDetailModel ingestDetail;
     
     public SatelliteMeasurementModel()
     {
@@ -154,6 +157,16 @@ public class SatelliteMeasurementModel
     public void setSatellite(SatelliteModel satellite)
     {
         this.satellite = satellite;
+    }
+    
+    public IngestDetailModel getIngestDetail()
+    {
+        return ingestDetail;
+    }
+    
+    public void setIngestDetail(IngestDetailModel ingestDetail)
+    {
+        this.ingestDetail = ingestDetail;
     }
     
 }

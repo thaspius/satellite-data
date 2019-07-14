@@ -1,0 +1,187 @@
+{
+	"info": {
+		"_postman_id": "bd516561-c3bd-4754-b6c1-78aac37cf3c3",
+		"name": "SatelliteDemo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Satellites get all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/satellites",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"satellites"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Satellites get by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/satellites/3",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"satellites",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Satellite Measurements get all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/satelliteMeasurements",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"satelliteMeasurements"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Satellite Measurements Time",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/satelliteMeasurements/satelliteTime",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"satelliteMeasurements",
+						"satelliteTime"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Satellite Measurements Common Metrics",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/satelliteMeasurements/satelliteCommonMetrics",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"satelliteMeasurements",
+						"satelliteCommonMetrics"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Satellite Measurements Earth Altitude",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/satelliteMeasurements/satelliteEarthAltitude",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"satelliteMeasurements",
+						"satelliteEarthAltitude"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Satellite Measurements Sea Salinity",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/satelliteMeasurements/satelliteSeaSalinity",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"satelliteMeasurements",
+						"satelliteSeaSalinity"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Satellite Measurements Vegetation Classification Percentages",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/satelliteMeasurements/satelliteVegetationClassificationPercentages",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"satelliteMeasurements",
+						"satelliteVegetationClassificationPercentages"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Satellite Measurements Average Metrics Sorted",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/satelliteMeasurements/satelliteMeasurementAveragesSorted",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"satelliteMeasurements",
+						"satelliteMeasurementAveragesSorted"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

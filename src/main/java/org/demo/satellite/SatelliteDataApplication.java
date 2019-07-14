@@ -3,10 +3,13 @@ package org.demo.satellite;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Date;
 
 import javax.annotation.PostConstruct;
 
 import org.demo.satellite.models.csv.SatelliteMeasurementCsvFactory;
+import org.demo.satellite.models.db.IngestDetailModel;
+import org.demo.satellite.repository.IngestDetailRepository;
 import org.demo.satellite.repository.SatelliteMeasurementRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -32,6 +35,9 @@ public class SatelliteDataApplication
     @Autowired
     SatelliteMeasurementRepository satelliteMeasurementRepository;
     
+    @Autowired
+    IngestDetailRepository ingestDetailRepository;
+    
     public SatelliteDataApplication()
     {
         logger.info("Initializing Satellite Data Application...");
@@ -42,6 +48,13 @@ public class SatelliteDataApplication
     {
         logger.info("Emptying out existing satellite measurement records for new import.");
         this.satelliteMeasurementRepository.deleteAll();
+        
+        Date fileIngestStartedAt = new Date();
+        
+        IngestDetailModel ingestDetail = new IngestDetailModel();
+        ingestDetail.setFileName(satelliteMeasurmentsFileName);
+        ingestDetail.setStartedAt(fileIngestStartedAt);
+        this.ingestDetailRepository.save(ingestDetail);
         
         logger.info("Reading from satellite measurements file: " + satelliteMeasurmentsFileName);
         try (BufferedReader br = new BufferedReader(new FileReader(satelliteMeasurmentsFileName)))
@@ -58,7 +71,7 @@ public class SatelliteDataApplication
                     {
                         continue;
                     }
-                    measureFactory.createFromSatelliteMeasurementCsv(values);
+                    measureFactory.createFromSatelliteMeasurementCsv(values, ingestDetail);
                 }
                 else
                 {
@@ -70,6 +83,10 @@ public class SatelliteDataApplication
         {
             logger.error("IO Exception while reading file: " + satelliteMeasurmentsFileName, ioe);
         }
+        
+        Date fileIngestCompletedAt = new Date();
+        ingestDetail.setCompletedAt(fileIngestCompletedAt);
+        this.ingestDetailRepository.save(ingestDetail);
     }
     
     public static void main(String[] args)

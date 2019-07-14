@@ -6,6 +6,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.TimeZone;
 
+import org.demo.satellite.models.db.IngestDetailModel;
 import org.demo.satellite.models.db.SatelliteMeasurementModel;
 import org.demo.satellite.models.db.SatelliteModel;
 import org.demo.satellite.repository.SatelliteMeasurementRepository;
@@ -29,7 +30,7 @@ public class SatelliteMeasurementCsvFactory
     @Autowired
     SatelliteMeasurementRepository satelliteMeasurementRepository;
     
-    public SatelliteMeasurementModel createFromSatelliteMeasurementCsv(String[] inputStrings)
+    public SatelliteMeasurementModel createFromSatelliteMeasurementCsv(String[] inputStrings, IngestDetailModel ingestDetail)
     {
         SatelliteMeasurementModel result = null;
         
@@ -84,6 +85,7 @@ public class SatelliteMeasurementCsvFactory
             measurementCsv.setSpecificMeasurement(specificMeasurementString);
             
             result = measurementCsv.convertToModel();
+            result.setIngestDetail(ingestDetail);
             
             try
             {
